@@ -1,0 +1,11 @@
+{
+  "start-a-hike.mp4": {
+    "title": "Start and finish a hike",
+    "group": "root",
+    "screens": [
+      "/trail/[id]",
+      "/hike/[id]",
+      "/hike/summary"
+    ]
+  }
+}

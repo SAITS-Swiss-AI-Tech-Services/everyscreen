@@ -1,0 +1,20 @@
+{
+  "name": "Trailmix",
+  "source": "..",
+  "scheme": "trailmix://",
+  "appId": "com.example.trailmix",
+  "groupTitles": {
+    "(auth)": "Sign-in",
+    "(tabs)": "Tabs"
+  },
+  "titles": {
+    "/(tabs)": "Trails",
+    "/(tabs)/explore": "Map",
+    "/(tabs)/profile": "You",
+    "/trail/[id]": "Trail",
+    "/hike/[id]": "Active hike",
+    "/hike/summary": "Hike summary",
+    "/hike/history": "Past hikes",
+    "/+not-found": "Not found"
+  }
+}

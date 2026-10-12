@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# A pretend Android phone for tests. Its screen is a PNG chosen by the last
+# opened deep link; every call is appended to $FAKE_ADB_DIR/calls.log.
+D=${FAKE_ADB_DIR:?}
+echo "$*" >> "$D/calls.log"
+[[ "$1" == "devices" ]] && { printf 'List of devices attached\nFAKE123          device usb:1-1 product:x model:Fake_Pixel device:x transport_id:1\n\n'; exit 0; }
+[[ "$1" == "-s" ]] && shift 2
+case "$*" in
+  "exec-out screencap -p") cat "$FAKE_ADB_SCREEN" ;;
+  "shell am start"*) echo "$*" | grep -o "'[^']*'" | tr -d "'" > "$D/url"; echo "Status: ok" ;;
+  "exec-out uiautomator dump /dev/tty")
+    echo '<?xml version="1.0" encoding="UTF-8"?><hierarchy rotation="0"><node text="Filters" resource-id="" class="android.widget.TextView" content-desc="" clickable="true" focused="false" bounds="[40,270][250,330]" /><node text="Ridge Loop" resource-id="trail-card" class="android.view.ViewGroup" content-desc="" clickable="true" focused="false" bounds="[40,360][740,545]" /></hierarchy>' ;;
+  "shell wm size") echo "Physical size: 780x1688" ;;
+  "shell input"*) ;;
+  *) echo "fake adb: unexpected: $*" >&2; exit 1 ;;
+esac

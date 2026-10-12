@@ -1,0 +1,4 @@
+# comments and issues (SQLite)
+data/
+# the demo keeps its thumbnails, so it works without ffmpeg
+thumbs/**/*.src

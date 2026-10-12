@@ -1,0 +1,13 @@
+{
+  "name": "trailmix",
+  "private": true,
+  "version": "1.4.0",
+  "main": "expo-router/entry",
+  "description": "Invented example app for everyscreen: only the source is here, it is never built.",
+  "dependencies": {
+    "expo": "~55.0.0",
+    "expo-router": "~5.0.0",
+    "react": "19.1.0",
+    "react-native": "0.81.0"
+  }
+}
